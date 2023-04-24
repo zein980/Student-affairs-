@@ -1,0 +1,32 @@
+{% load static%}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Student Management System</title>
+    <link rel="stylesheet" href="{% static 'css/newpage.css' %}" />
+  </head>
+
+  <body style="background: linear-gradient(45deg, #9bab94, #77b3b9)">
+    <div class="p">
+      <div class="one">
+        <label class="first">
+          <a
+            id="link"
+            href="{% url 'index' %}"
+            target="blank"
+            title="go to student management system"
+            >student Affairs</a
+          ></label
+        >
+
+        <label class="second"> Higher Studies</label>
+      </div>
+      <div class="two">
+        <label class="third">Human Resource</label>
+
+        <label class="forth">Laboratory Tracking</label>
+      </div>
+    </div>
+  </body>
+</html>

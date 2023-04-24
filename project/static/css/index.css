@@ -1,0 +1,119 @@
+
+/* showData table styling */
+.showdata table{
+
+    padding-left: 20px;
+    width: 90%;
+    font-size: 20px;
+    
+}
+.showdata table td,th{
+    border: 2px #dddddd;
+    padding: 8px;
+    text-align: left;
+}
+.showdata table tr:nth-child(odd){
+    background-color: #dddddd;
+}
+.showdata table tr:hover{
+    background-color: #7b92dd;
+}
+#os:hover{
+    background-color: #dddddd;
+}
+
+
+/******body******/
+/*body{
+    background: linear-gradient(45deg, #462762, transparent);
+}
+
+/*add sutudent */
+
+.data {
+    background-color: white;
+    width: 65%;
+    border-radius: 16px;
+    margin-right: 17.5%;
+    margin-left: 17.5%;
+    margin-top: 45px;
+}
+
+form{
+    display: flex;
+    align-content: flex-start;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.input-data{
+    width: 40%;
+    height: 55px;
+    margin-bottom: 24px;
+    margin-right: 5%;
+    margin-left: 5%;
+}
+
+label{
+    font-weight: 500;
+    font-family: system-ui;
+    
+}
+
+.box{
+    height: 34px;
+    width: 100%;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid #cfb7b7;
+    padding-left: 10px;
+    font-size: 15px;
+    padding-right: 3px;
+    margin-left: -3px;
+}
+.box:focus{
+    border-bottom-width: 2px;
+    border-color: #6161db;
+}
+
+.data h1{
+    width: 40%;
+    font-size: 30px;
+    color: black;
+    margin-top: -20px;
+    margin-left: 30%;
+    margin-right: 30%;
+    padding-top: 5px;
+}
+
+.dot{
+    width: 40%;
+    height: 55px;
+    margin-bottom: 24px;
+    margin-right: 5%;
+    margin-left: 5%;
+    margin-top: 8px;
+}
+.dot-title{
+    height: 27px;
+}
+.popup {
+    color: wheat;
+    width: 30%;
+    height: 40px;
+    margin-left: 65%;
+    margin-top: 30px;
+    border-radius: 25px;
+    font-weight: bold;
+    font-family: sans-serif;
+    font-size: medium;
+    cursor: pointer;
+    background: linear-gradient(45deg, #e167b0, #0e2e36);
+    border-color: #6d32a1;
+    margin-bottom: 35px;
+
+}
+
+  button:hover{
+    background: linear-gradient(-45deg, #e167b0, #0e2e36);
+}

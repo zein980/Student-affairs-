@@ -1,0 +1,67 @@
+{%extends 'nav.html'%} {%block content%} {%load static%}
+
+<html>
+  <head>
+    <link rel="stylesheet" href="{% static 'css/edit.css' %}" />
+    <title>Search</title>
+  </head>
+
+  <body>
+    <div class="box">
+      <h1>Search!</h1>
+      <form name="form" method="POST" action="{% url 'search'%}">
+        {% csrf_token %}
+
+        <input
+          id="st_name"
+          class="searchField"
+          type="search"
+          name="name"
+          placeholder="name..."
+        />
+        <input class="searchButton" type="submit" name="" value="Search" />
+      </form>
+    </div>
+
+    <div id="p">
+      <table class="tStudent">
+        <tr>
+          <th>name</th>
+          <th>email</th>
+          <th>id</th>
+          <th>Phone</th>
+          <th>Department</th>
+          <th>GPA</th>
+          <th>Level</th>
+          <th>Date of birth</th>
+          <th>Gender</th>
+          <th>Status</th>
+          <th>select department</th>
+        </tr>
+        <br />
+        {% if namest %} {% for x in results %}
+        <tr>
+          <td>{{x.name}}</td>
+          <td>{{x.email}}</td>
+          <td>{{x.idst}}</td>
+          <td>{{x.phone}}</td>
+          <td>{{x.department}}</td>
+          <td>{{x.gpa}}</td>
+          <td>{{x.level}}</td>
+          <td>{{x.date}}</td>
+          <td>{{x.gender}}</td>
+          <td>{{x.status}}</td>
+          <td>
+            <button id="departmentButton" class="button">
+              <a id="depLink" href="search/department/{{ x.id }} "
+                >department</a
+              >
+            </button>
+          </td>
+        </tr>
+        {%endfor%} {%endif%}
+      </table>
+    </div>
+  </body>
+</html>
+{%endblock content%}

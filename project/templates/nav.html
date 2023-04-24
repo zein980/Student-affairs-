@@ -1,0 +1,18 @@
+{% load static%}
+<link rel="stylesheet" href="{% static 'css/nav.css' %}" />
+<style>
+  body {
+    background: linear-gradient(45deg, #462762, transparent);
+  }
+</style>
+<div class="navi">
+  <ul>
+    <li><a href="{% url 'index' %}">Home</a></li>
+    <li><a href="{% url 'add' %}">Add Data</a></li>
+    <li><a href="{% url 'show' %}">Show Data</a></li>
+    <li><a href="{% url 'search' %}">Search For</a></li>
+  </ul>
+</div>
+{% block content%}{% endblock content%}
+ <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+{% block javascript%}{% endblock %}

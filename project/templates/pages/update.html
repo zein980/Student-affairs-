@@ -1,0 +1,162 @@
+{%extends 'nav.html'%} {%block content%} {%load static%}
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Search</title>
+
+    <link rel="stylesheet" href="{% static 'css/edit.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/index.css' %}" />
+    <script type="text/javascript" src="{% static 'js/update.css' %}"></script>
+  </head>
+
+  <body>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <div class="data">
+      <h1>Edit student data</h1>
+      <form
+        name="form2"
+        action="updatestudent/{{ stu.id }}"
+        method="POST"
+        onsubmit="return checkForm(this);"
+      >
+        {%csrf_token%}
+        <div class="input-data">
+          <label>Name</label>
+          <input
+            class="box"
+            type="text"
+            name="name"
+            placeholder="Enter your name"
+            minlength="3"
+            maxlength="30"
+            value="{{stu.name}}"
+          />
+        </div>
+        <br />
+
+        <div class="input-data">
+          <label>Email</label>
+          <input
+            class="box"
+            type="email"
+            name="email"
+            placeholder="Enter your email"
+            value="{{stu.email}}"
+          />
+        </div>
+        <br />
+
+        <div class="input-data">
+          <label>Phone</label>
+          <input
+            class="box"
+            type="text"
+            name="phone"
+            placeholder="Enter your number"
+            value="{{stu.phone}}"
+          />
+        </div>
+        <br />
+
+        <div class="input-data">
+          <label>Id</label>
+          <input
+            class="box"
+            type="text"
+            name="idst"
+            placeholder="Enter your id"
+            maxlength="10"
+            minlength="3"
+            value="{{stu.idst}}"
+          />
+        </div>
+        <br />
+        <div class="input-data">
+          <label for="dep">department</label>
+          <input
+            type="text"
+            class="box"
+            value="{{stu.department}}"
+            name="department"
+            raedonly
+          />
+        </div>
+        <br />
+
+        <div class="input-data">
+          <label>Level</label>
+          <input
+            class="box"
+            type="number"
+            name="level"
+            min="1"
+            max="4"
+            placeholder="Enter your level"
+            value="{{stu.level}}"
+          />
+        </div>
+        <br />
+
+        <div class="input-data">
+          <label>GPA</label>
+          <input
+            class="box"
+            type="number"
+            step="0.01"
+            name="gpa"
+            min="1"
+            max="4"
+            placeholder="Enter your gpa"
+            value="{{stu.gpa}}"
+          />
+        </div>
+        <br />
+
+        <div class="input-data">
+          <label>Date of birth</label>
+          <input class="box" type="text" value="{{stu.date}}" raedonly />
+          <!--
+          <input
+            class="box"
+            type="date"
+            name="date"
+            max="2010-01-01"
+            min="1980-01-01"
+          />-->
+        </div>
+        <br />
+
+        <div class="dot">
+          <div class="dot-title">
+            <label>Gender</label>
+          </div>
+          <div>
+            <input id="m" type="radio" name="gender" value="female" />
+            <label for="m">Male</label>
+
+            <input id="f" type="radio" name="gender" value="male" checked />
+            <label for="f">Female</label>
+          </div>
+        </div>
+        <br />
+        <div class="dot">
+          <div class="dot-title">
+            <label>Status</label>
+          </div>
+          <div>
+            <input type="radio" name="status" id="a" value="active" checked />
+            <label for="a">Active</label>
+            <input type="radio" name="status" id="i" value="inactive" />
+            <label for="i">Inactive</label>
+            <br />
+            <br />
+          </div>
+        </div>
+
+        <button class="popup">save</button>
+      </form>
+    </div>
+  </body>
+</html>
+{%endblock content%}

@@ -1,0 +1,186 @@
+{%extends 'nav.html'%} {%block content%} {%load static%}
+
+<html>
+  <head>
+    <title>Add Student</title>
+    <link rel="stylesheet" href="{% static 'css/index.css' %}" />
+    <script src="{% static 'js/add.js' %}"></script>
+  </head>
+  <body style="background: linear-gradient(45deg, #462762, transparent)">
+    <div class="data">
+      <h1>Add New Student</h1>
+      <form
+      name="form" onsubmit = "return checkForm(this);"
+        method="POST"
+        action="add"
+        validate = "{% url 'validate_id' %}"
+      >
+        {% csrf_token %}
+
+        <div class="input-data">
+          <label>Name</label>
+          <input
+            class="box"
+            type="text"
+            name="name"
+            placeholder="Enter your name"
+            minlength="3"
+            maxlength="40"
+            required
+          />
+        </div>
+        <br />
+
+        <div class="input-data">
+          <label>Email</label>
+          <input
+            class="box"
+            type="email"
+            name="email"
+            placeholder="Enter your email"
+            required
+          />
+        </div>
+        <br />
+
+        <div class="input-data">
+          <label>Phone</label>
+          <input
+            class="box"
+            type="text"
+            name="phone"
+            required
+            placeholder="Enter your number"
+          />
+        </div>
+        <br />
+
+        <div class="input-data">
+          <label>Id</label>
+          <input
+            id="st_id"
+            class="box"
+            type="text"
+            name="idst"
+            placeholder="Enter your id"
+            maxlength="10"
+            required
+            minlength="3"
+          />
+        </div>
+        <br />
+        <div class="input-data">
+          <label for="dep">department</label>
+          <select class="box" name="department">
+            <option value="select department">select department</option>
+            <option value="computer science(CS)">computer science(CS)</option>
+            <option value="Information Technology(IT)">
+              Information Technology(IT)
+            </option>
+            <option value="Information System(IS)">
+              Information System(IS)
+            </option>
+            <option value="Decision Support(DS)">Decision Support(DS)</option>
+            <option value="Artificial Intelligence(AI)">
+              Artificial Intelligence(AI)
+            </option>
+            <option value="other">other</option>
+          </select>
+        </div>
+        <br />
+
+        <div class="input-data">
+          <label>Level</label>
+          <input
+            class="box"
+            type="number"
+            name="level"
+            min="1"
+            max="4"
+            required
+            placeholder="Enter your level"
+          />
+        </div>
+        <br />
+
+        <div class="input-data">
+          <label>GPA</label>
+          <input
+            class="box"
+            type="number"
+            step="0.01"
+            required
+            name="gpa"
+            min="1"
+            max="4"
+            placeholder="Enter your gpa"
+          />
+        </div>
+        <br />
+
+        <div class="input-data">
+          <label>Date of birth</label>
+          <input
+            class="box"
+            type="date"
+            name="date"
+            max="2010-01-01"
+            min="1980-01-01"
+            required
+          />
+        </div>
+        <br />
+
+        <div class="dot">
+          <div class="dot-title">
+            <label>Gender</label>
+          </div>
+          <div>
+            <input id="m" type="radio" name="gender" value="male" required/>
+            <label for="m">Male</label>
+
+            <input id="f" type="radio" name="gender" value="female" />
+            <label for="f">Female</label>
+          </div>
+        </div>
+        <br />
+        <div class="dot">
+          <div class="dot-title">
+            <label>Status</label>
+          </div>
+          <div>
+            <input type="radio" name="status" id="a" value="active" required/>
+            <label for="a">Active</label>
+            <input type="radio" name="status" id="i" value="inactive" />
+            <label for="i">Inactive</label>
+            <br />
+            <br />
+          </div>
+        </div>
+
+        <button class="popup" type="submit" onsubmit="return confirm('A new student has been added successfully')">save</button>
+      </form>
+    </div>
+  </body>
+</html>
+{%endblock content%}
+
+{%block javascript%}
+<script>
+  $("#st_id").change(function(){
+    var form = $(this).closest("form");
+    $.ajax({
+      url:form.attr("validate"),
+      data:form.serialize(),
+      dataType:'json',
+      success: function(data){
+        if(data.is_taken){
+          alert(data.errormsg);
+        }
+      }
+    })
+  });
+  
+</script>
+{%endblock javascript%}
+

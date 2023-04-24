@@ -1,0 +1,27 @@
+{%extends 'nav.html'%} {%block content%} {%load static%}
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Search</title>
+    <link rel="stylesheet" href="{% static 'css/edit.css' %}" />
+    <script type="text/javascript" src="{% static 'js/delete.js' %}"></script>
+  </head>
+
+  <body>
+    <div class="box2">
+      <h1>Delete Data!</h1>
+      <form id="searchBar" onsubmit="confirmBox()">
+        <input
+          class="searchField"
+          type="text"
+          placeholder="Enter Student ID..."
+          required
+        />
+        <input class="searchButton" type="submit" value="delete" />
+        <br />
+      </form>
+    </div>
+  </body>
+</html>
+{% endblock content%}

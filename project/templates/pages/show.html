@@ -1,0 +1,67 @@
+{%extends 'nav.html'%} {%block content%} {%load static%}
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>View students</title>
+    <meta charset="UTF-8" L />
+    <link rel="stylesheet" href="{% static 'css/index.css' %}" />
+    <script type="text/javascript" src="{% static 'js/delete.js' %}"></script>
+
+    <!-- <link rel ="stylesheet" href="../CSS/Style.css">
+    <link rel ="stylesheet" href="../CSS/nav.css">-->
+  </head>
+  <body style="background-color: #eeeeeee6">
+    <h1>View students!</h1>
+
+    <div class="showdata">
+      <table>
+        <tr id="os">
+          <th>name</th>
+          <th>email</th>
+          <th>id</th>
+          <th>Phone</th>
+          <th>Department</th>
+          <th>GPA</th>
+          <th>Level</th>
+          <th>Date of birth</th>
+          <th>Gender</th>
+          <th>Status</th>
+          <th>Edit</th>
+          <!-- <th class="rad">change status</th>-->
+        </tr>
+        {%for x in sts %}
+        <tr>
+          <td>{{x.name}}</td>
+          <td>{{x.email}}</td>
+          <td>{{x.idst}}</td>
+          <td>{{x.phone}}</td>
+          <td>{{x.department}}</td>
+          <td>{{x.gpa}}</td>
+          <td>{{x.level}}</td>
+          <td>{{x.date}}</td>
+          <td>{{x.gender}}</td>
+          <td>{{x.status}}</td>
+          <td>
+            <button id="departmentButton" class="button">
+              <a id="depLink" href="show/update/{{ x.id }}">edit</a>
+            </button>
+            <button id="departmentButton" class="button" onclick="confirmBox()">
+              <a id="depLink" href="show/delete/{{ x.id }} ">delete</a>
+            </button>
+          </td>
+
+          <!-- <td> 
+                    <input type="radio" name="student1" id="a1" value="active" >
+                    <label for="a1">Active</label>
+                    <input type="radio" name="student1" id="i1" value="inactive" >
+                    <label for="i1">Inactive</label>
+                 </td> -->
+
+          {%endfor%}
+        </tr>
+      </table>
+    </div>
+  </body>
+</html>
+{% endblock content%}

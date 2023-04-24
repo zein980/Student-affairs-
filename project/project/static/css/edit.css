@@ -1,0 +1,123 @@
+body{
+    background: linear-gradient(45deg, #462762, transparent);
+
+}
+
+.searchField{   /* search bar of update and delete page*/
+
+    width: 30%;
+    height: 40px;
+    border: 2px solid rgb(35, 3, 67) ;
+    font-size: 18;
+    margin: auto;
+
+}
+.searchButton {
+    color: rgb(195, 119, 216);
+    width: 10%;
+    height: 40px;
+    border-radius: 25px;
+    font-weight: bold;
+    font-family: sans-serif;
+    font-size: medium;
+    cursor: pointer;
+    background: linear-gradient(45deg, #e167b0, #0e2e36);
+    border-color:rgb(35, 3, 67) ;
+
+
+}
+
+.tStudent{
+    margin-top: 3%;
+    width: 100%;
+    border-collapse: collapse;    /*single border*/
+
+}
+
+.tStudent td, .tStudent th {
+    border: 2px solid rgb(35, 3, 67) ;
+    padding: 10px;
+    margin-left: -3;
+    background-color: white;
+
+}
+
+.tStudent th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+
+}
+
+
+.tStudent td {
+    padding-top: 12px;
+    padding-bottom: 12px;
+
+}
+
+
+.button{
+    color: rgb(195, 119, 216);
+    width: 150px;
+    height: 50px;
+    border-radius: 25px;
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: medium;
+    cursor: pointer;
+    background: linear-gradient(45deg, #e167b0, #0e2e36);
+    border-color:rgb(35, 3, 67) ;   
+}
+
+#updateTable{
+    margin-top: 3%;
+    width: 100%;
+    border-collapse: collapse;    /*single border*/
+}
+
+.updatBox{
+    height: 34px;
+    width: 80%;
+    outline: none;
+    border-radius: 5 px;
+    border: 1px solid rgb(16, 1, 19);
+    padding-left: 5px;
+    font-size: 15px;
+    padding-right: 10px;
+    margin-left: -3px;
+    margin-top: 0%;
+    
+}
+.updatbox:focus{
+    border-bottom-width: 3px;
+    border-color: #180418;
+}
+
+#updateTable td, #updateTable th {
+    border: 2px solid rgb(35, 3, 67) ;
+    padding: 5px;
+    margin-left: -3;
+    background-color: white;
+
+}
+
+#updateTable th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+
+}
+
+
+#updateTable td {
+    padding-top: 12px;
+    padding-bottom: 12px;
+
+}
+#depLink{
+    font-size: 20;
+    text-decoration: none;
+    color: rgb(23, 17, 23);
+}
+.radio{
+    width: 7%;
+}

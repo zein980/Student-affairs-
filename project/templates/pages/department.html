@@ -1,0 +1,43 @@
+{%extends 'nav.html'%} {%block content%} {%load static%}
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>department assignment</title>
+    <meta charset="UTF-8" L />
+    <link rel="stylesheet" href="{% static 'css/department.css' %}" />
+  </head>
+
+  <body>
+    <h1>Department Assignment!</h1>
+    <form action="addpartment/{{ stu.id }}" method="POST">
+      <div class="name">
+        <label>student name</label>
+        <input class="box" type="text" value="{{stu.name}}" readonly />
+      </div>
+      <br />
+      <div class="id">
+        <label>student ID</label>
+        <input class="box" type="text" value="{{stu.idst}}" readonly />
+      </div>
+      <br />
+      <div class="department">
+        <label for="dep">select department</label>
+        <select class="box" name="department">
+          <option value="computer science(CS)">computer science(CS)</option>
+          <option value="Information Technology(IT)">
+            Information Technology(IT)
+          </option>
+          <option value="Information System(IS)">Information System(IS)</option>
+          <option value="Decision Support(DS)">Decision Support(DS)</option>
+          <option value="Artificial Intelligence(AI)">
+            Artificial Intelligence(AI)
+          </option>
+        </select>
+      </div>
+      <br />
+
+      <input class="button" type="submit" />
+    </form>
+  </body>
+</html>
+{%endblock content%}
